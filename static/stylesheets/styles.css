@@ -1,0 +1,433 @@
+@import url('https://fonts.cdnfonts.com/css/pattaya');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Raleway, sans-serif;
+    display: flex;
+}
+
+h1 {
+    font-family: 'Pattaya', sans-serif;
+    font-size: 44px;
+}
+
+.sidebar {
+    background-color: #8CFF98;
+    height: 100vh;
+    width: 110px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0 1.7rem;
+    overflow: hidden;
+    transition: all 0.5s linear;
+}
+
+.sidebar h1 {
+    font-size: 1.1rem;
+    transition: 0.5s;
+}
+
+.sidebar:hover {
+    width: 250px;
+    transition: 0.5s;
+}  
+
+.sidebar:hover h1 {
+    font-size: 2.8rem;
+    transition: 0.5s;
+}
+
+    .logo {
+        height: 80px;
+        padding: 16px;
+    }
+
+    .menu {
+        height: 88%;
+        position: relative;
+        list-style: none;
+        padding: 0;
+    }
+
+    .menu li {
+        padding: 1rem;
+        margin: 8px 0;
+        border-radius: 8px;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .menu li:hover,
+    .active {
+        background: #9aeea4;
+    }
+
+    .menu a {
+        color: #000;
+        font-size: 14px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .menu a span {
+        overflow: hidden;
+    }
+
+    .menu a i {
+        font-size: 1.1rem;
+    }
+
+    .logout {
+        position: absolute;
+        bottom: 150px;
+        left: 0;
+        width: 100%;
+    }
+
+    .sidebar ul {
+        font-family: 'Poppins', sans-serif;
+    }
+
+.wrapper {
+    background: #EFEFEF;
+    padding: 1rem;
+    margin-top: 0;
+    vertical-align: top;
+    width: 100%;
+}
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        background: #FFF;
+        border-radius: 10px;
+        padding: 10px 2rem;
+        margin-bottom: 1rem;
+    }
+
+        #message {
+            display: none;
+        }
+
+        .header-container .profile img {
+            height: 50px;
+            width: 50px;
+            vertical-align: middle;
+            border-radius: 50%;
+        }
+
+        .header-container .profile span {
+            vertical-align: middle;
+            margin: 10px;
+            transition: ease-in-out 0.5s;
+        }
+
+        #light {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 2.2vw;
+            width: 60%;
+            /* color: #FFF; */
+        }
+
+        .light-logo {
+            width: 90%;
+            height: 0;
+            padding-top: 50%;
+            margin: 20px auto;
+            overflow: hidden;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            position: relative;
+        }
+        
+            .light-logo img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+
+        #temperature {
+            position: relative;
+            text-align: center;
+            font-size: 3vw;
+            /* color: #FFF; */
+        }
+
+        .thermometer-logo {
+            height: 90%;
+            position: absolute;
+        }
+
+            .thermometer-logo img {
+                height: 100%;
+            }
+
+        #humidity {
+            position: relative;
+            text-align: center;
+            font-size: 3vw;
+            /* color: #FFF; */
+        }
+
+        #cup {
+            width: 50%;
+            height: 80%;
+            outline: 2px solid #000;
+            position: absolute;
+            border-radius: 0 0 50% 50%;
+            box-shadow: 2px 0 px 40px #000;
+            overflow: hidden;
+        }
+
+        .wave {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            background: lightblue;
+            bottom: -300px;
+            left: -25%;
+            border-radius: 33%;
+            transition: all 1.4s;
+            animation: waves 2.4s linear infinite;
+        }
+
+        .blue {
+            background: linear-gradient(to right, #eaecc6, #2bc0e4);
+        }
+
+        .drop {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 20px;
+            left: 44%;
+            border-radius: 1em;
+            border-top-right-radius: 0.2em;
+            opacity: 0;
+            animation: drop 2s linear infinite;
+        }
+
+        .drop:nth-child(2) {
+            left: 42%;
+            animation-delay: 0.6s;
+        }
+
+        @keyframes drop {
+            0% {
+                opacity: 0.2;
+                transform: translateY(0) rotate(-40deg);
+            }
+            20% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(220px) rotate(-40deg);
+            }
+        }
+
+        @keyframes waves {
+            0% {
+                transform: rotate(0);
+                border-radius: 30%;
+            }
+            45% {
+                border-radius: 39%;
+            }
+            100% {
+                transform: rotate(360deg);
+                border-radius: 30%;
+            }
+        }
+
+section {
+    background: #FFF;
+    height: 50vh;
+    margin: 20px auto;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+main {
+    background: #FFF;
+    height: 35vh;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.data-container {
+    background: rgb(229, 223, 223);
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+    position: relative;
+}
+
+.data-container:hover {
+    transform: translateY(-5px);
+}
+
+.data-title {
+    padding-bottom: 10px;
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+}
+
+div#chartData {
+    width: 100%;
+    height: 87.5%;
+    border-radius: 0 10px 10px 10px;
+    overflow: hidden;
+}
+
+h2.data-content {
+    font-family: 'Roboto', sans-serif;
+    padding: 4px;
+}
+
+    .data-content span {
+        font-size: 2vw;
+        vertical-align: top;
+        
+    }
+
+.data-btn {
+    border: none;
+    padding: 10px;
+    background-color: #334136;
+    color: #FFF;
+    border-radius: 10px 10px 0 0;
+}
+
+.data-btn:hover {
+    cursor: pointer;
+    background-color: #435447;
+}
+
+.record-btn {
+    background: transparent;
+    border-radius: 10px;
+    color: red;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+.record-active {
+    background: red;
+    transition: ease-in-out 0.5s;
+    cursor: pointer;
+}
+
+.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+div.update-profile {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+    .profile-content {
+        background-color: #fefefe;
+        margin: 15% auto; 
+        padding: 20px;
+        border: 1px solid #888;
+        border-radius: 10px;
+        width: 25%; 
+        position: relative;
+    }
+
+        .profile-content img {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            margin: 10px auto;
+            border-radius: 50%;
+        }
+
+        .profile-content label {
+            display: block;
+            text-align: center;
+        }
+
+        .profile-content input {
+            width: 60%;
+            margin: 10px auto;
+            display: block;
+            height: 32px;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 5px;
+            right: 20px;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #submitProfile {
+            margin-top: 40px;
+            background: rgb(25, 25, 255);
+            color: #fff;
+        }
+
+        #submitProfile:hover {
+            cursor: pointer;
+            background: rgb(100, 100, 255);
+        }
+
+    .enroll-fingerprint {
+        text-align: center;
+    }

@@ -1,0 +1,139 @@
+<html>
+	<head>
+		<title>GreenThumb</title>
+		<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+			<link rel="stylesheet" href="https://unpkg.com/normalize.css" />
+			<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" />
+			<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+			<script type ="text/javascript" src="/scripts/script.js"></script>
+			<script type ="text/javascript" src="/scripts/modal.js"></script>
+	</head>
+	<body>
+		<div class="sidebar">
+			<div class="logo"></div>
+			<h1>Green<br>&nbsp;&nbsp;&nbsp;Thumb</h1>
+			<ul class="menu">
+				<li class="active">
+					<a href="#">
+						<i class="fas fa-tachometer-alt"></i>
+						<span>Dashboard</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" id="openProfileModal">
+						<i class="fas fa-user"></i>
+						<span>&nbsp;Profile</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fas fa-chart-bar"></i>
+						<span>Statistics</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fas fa-briefcase"></i>
+						<span>Careers</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fas fa-question-circle"></i>
+						<span>FAQ</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fas fa-cog"></i>
+						<span>Settings</span>
+					</a>
+				</li>
+				<li class="logout" id="logout">
+					<a href="#">
+						<i class="fas fa-sign-out-alt"></i>
+						<span>Logout</span>
+					</a>
+				</li>	
+			</ul>
+		</div>
+		<div class="wrapper">
+			<div class="header-container">
+				<div class="header-title">
+					<span>Primary</span>
+					<h2>Dashboard</h2>
+				</div>
+				<span id="message"></span>
+				<div class="profile">
+					<span>Scan Fingerprint to Login</span>
+					<img src="/images/profile-default.png" alt="profile" />
+				</div>
+			</div>
+
+			<main>
+				<div class="data-container">
+					<h3 class="data-title">Light Intensity</h3>
+					<div class="light-logo"><img src="/images/day-and-night.png" alt="light" /></div>
+					<div id="light"></div>
+					<button id="record-light" class="record-btn disabled">Record</span>
+				</div>
+				<div class="data-container">
+					<h3 class="data-title">Temperature</h3>
+					<div class="thermometer-logo"><img src="/images/temperature.png" alt="temperature" /></div>
+					<div id="temperature"></div>
+					<button id="record-temp" class="record-btn disabled">Record</span>
+				</div>
+				<div class="data-container">
+					<h3 class="data-title">Humidity</h3>
+					<div class="drop blue"></div>
+					<div class="drop blue"></div>
+					<div id="cup">
+						<div class="wave blue"></div>
+					</div>		
+					<div id="humidity"></div>
+					<button id="record-humidity" class="record-btn disabled">Record</span>
+				</div>
+			</main>
+
+			<section>
+				<button class="data-btn" id="light-btn">Light Intensity</button>
+				<button class="data-btn" id="temperature-btn">Temperature</button>
+				<button class="data-btn" id="humidity-btn">Humidity</button>
+				<div id="chartData"></div>
+				<form id="date">
+					<label for="datetime">Select Date and Time Range:</label>
+					<input type="datetime-local" id="startdatetime" name="startdatetime" required /> -
+					<input type="datetime-local" id="enddatetime" name="enddatetime" required />
+				</form>
+			</section>
+		</div>
+		<div id="updateModal" class="update-profile">
+			<form action="" id="update" enctype="multipart/form-data">
+				<div class="profile-content">
+					<!-- <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" /> -->
+					<span id="update-message"></span>
+					<img src="/images/profile-default.png" alt="profile" />
+					<span class="close">&times;</span>
+					<label>
+						<span>First Name :</span>
+						<input type="text" name="first_name" class="box" autocomplete="off" required />
+					</label>
+					<label>
+						<span>Last Name :</span>
+						<input type="text" name="last_name" class="box" autocomplete="off" required />
+					</label>
+					<label>
+						<span>Location :</span>
+						<input type="text" name="location" class="box" autocomplete="off" required />
+					</label>
+					<input type="submit" value="Register" id="submitProfile" />
+					<div class="enroll-fingerprint"></div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
